@@ -1,6 +1,7 @@
 ﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using MagicMod.content.projectiles;
 
 namespace MagicMod.content.items
 {
@@ -23,7 +24,7 @@ namespace MagicMod.content.items
 
             Item.UseSound = SoundID.Item71;
 
-            Item.shoot = ModContent.ProjectileType<BookOfSwordsProjectile>();
+            Item.shoot = ModContent.ProjectileType<BookOfSwordProjectile>();
             Item.shootSpeed = 20f;
         }
     }
