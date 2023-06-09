@@ -2,11 +2,16 @@
 using Terraria.ID;
 using Terraria.ModLoader;
 using MagicMod.content.projectiles;
+using System.Collections.Generic;
 
 namespace MagicMod.content.items
 {
     internal class BookOfSwords : ModItem
     {
+        public List<NPC> hits = new List<NPC>();
+        public List<int> hitNums = new List<int>();
+        private int dammageMult = 24;
+
         public override void SetDefaults()
         {
             Item.width = 28;
