@@ -3,6 +3,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using MagicMod.content.projectiles;
 using System.Collections.Generic;
+using MagicMod.content.buffs;
 
 namespace MagicMod.content.items
 {
@@ -10,8 +11,8 @@ namespace MagicMod.content.items
     {
         public List<NPC> hits = new List<NPC>();
         public List<int> hitNums = new List<int>();
-        public List<Projectile> projectiles = new List<Projectile>();
-        private int dammageMult = 24;
+        public List<List<Projectile>> projectilelist = new List<List<Projectile>>();
+        private const int damageMult = 24;
 
         public override void SetDefaults()
         {
@@ -22,7 +23,7 @@ namespace MagicMod.content.items
             Item.DamageType = DamageClass.Magic;
             Item.noMelee = true;
             Item.mana = 2;
-            Item.damage = 24;
+            Item.damage = 1;
             Item.knockBack = 3.4f;
 
             Item.useTime = 20;
@@ -56,10 +57,31 @@ namespace MagicMod.content.items
                 Item.useTime = 20;
                 Item.useAnimation = 15;
 
-                foreach (Projectile projectile in projectiles)
+                for (int i = 0; i < hits.Count; i++)
                 {
-                    projectile.Kill();
+                    double totalDam = 0;
+
+                    double numOfHits = hitNums[i];
+                    if (numOfHits > 10)
+                    {
+                        totalDam = numOfHits * damageMult * 1.1;
+                    }
+                    else
+                    {
+                        totalDam = numOfHits * damageMult;
+                    }
+
+
+                    NPC enemy = hits[i];
+                    foreach (Projectile projectile in projectilelist[i])
+                    {
+                        projectile.Kill();
+                    }
+
+                    enemy.HitEffect(0, totalDam);
+                    enemy.AddBuff(ModContent.BuffType<BookOfSwordsDebuff>(), 900);
                 }
+
             }
             else
             {
@@ -70,7 +92,7 @@ namespace MagicMod.content.items
                 Item.DamageType = DamageClass.Magic;
                 Item.noMelee = true;
                 Item.mana = 2;
-                Item.damage = 24;
+                Item.damage = 1;
                 Item.knockBack = 3.4f;
 
                 Item.useTime = 20;

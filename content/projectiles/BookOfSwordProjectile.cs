@@ -80,7 +80,7 @@ namespace MagicMod.content.projectiles
             }
         }
 
-        public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
             IsStickingToTarget = true;
             TargetWhoAmI = target.whoAmI;
@@ -94,25 +94,18 @@ namespace MagicMod.content.projectiles
                 {
                     int index = bookOfSwords.hits.IndexOf(target);
                     bookOfSwords.hitNums[index]++;
+                    bookOfSwords.projectilelist[index].Add(Projectile);
                 }
                 else
                 {
                     bookOfSwords.hits.Add(target);
                     bookOfSwords.hitNums.Add(1);
+                    List<Projectile> tempList = new List<Projectile>
+                    {
+                        Projectile
+                    };
+                    bookOfSwords.projectilelist.Add(tempList);
                 }
-
-                /*                foreach (NPC npc in bookOfSwords.hits)
-                                {
-                                    Main.NewText(npc.ToString(), 255, 255, 255);
-                                }
-
-                                foreach (int num in bookOfSwords.hitNums)
-                                {
-                                    Main.NewText(num.ToString(), 255, 255, 255);
-                                }
-                                Main.NewText("end", 255, 255, 255);*/
-
-                bookOfSwords.projectiles.Add(Projectile);
             }
         }
         public override bool? Colliding(Rectangle projHitbox, Rectangle targetHitbox)

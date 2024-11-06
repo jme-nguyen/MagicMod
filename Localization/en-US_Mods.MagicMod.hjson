@@ -1,0 +1,15 @@
+Projectiles.BookOfSwordProjectile.DisplayName: Book Of Sword Projectile
+
+Items: {
+	BookOfSwords: {
+		Tooltip: ""
+		DisplayName: Book Of Swords
+	}
+}
+
+Buffs: {
+	BookOfSwordsDebuff: {
+		Description: Mods.MagicMod.Buffs.BookOfSwordsDebuff.Description
+		DisplayName: Book Of Swords Debuff
+	}
+}
