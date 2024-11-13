@@ -78,8 +78,14 @@ namespace MagicMod.content.items
                         projectile.Kill();
                     }
 
-                    enemy.HitEffect(0, totalDam);
-                    enemy.AddBuff(ModContent.BuffType<BookOfSwordsDebuff>(), 900);
+                    int hitDirection = player.Center.X < enemy.Center.X ? 1 : -1;
+
+                    enemy.StrikeNPC(new NPC.HitInfo
+                    {
+                        Damage = (int)totalDam,
+                        Knockback = Item.knockBack,
+                        HitDirection = hitDirection,
+                    });
                 }
 
             }

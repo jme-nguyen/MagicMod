@@ -25,9 +25,9 @@ namespace MagicMod.content.projectiles
 
         public override void SetDefaults()
         {
-            Projectile.width = 28;
-            Projectile.height = 28;
-
+            Projectile.width = 16;
+            Projectile.height = 16;
+ 
             Projectile.friendly = true;
             Projectile.tileCollide = false;
             Projectile.ignoreWater = true;
@@ -71,8 +71,21 @@ namespace MagicMod.content.projectiles
 
             if (Main.npc[npcTarget].active && !Main.npc[npcTarget].dontTakeDamage)
             {
-                Projectile.Center = Main.npc[npcTarget].Center - Projectile.velocity * 2.5f;
-                Projectile.gfxOffY = Main.npc[npcTarget].gfxOffY;
+                NPC npc = Main.npc[npcTarget];
+
+                // Direction is already stored in velocity from OnHitNPC
+                Vector2 direction = Projectile.velocity;
+
+                // Calculate offset based on NPC and projectile sizes
+                float offsetDistance = (npc.width + npc.height) / 5f + Projectile.width / 2f;
+
+                // Position the projectile on the surface
+                Projectile.Center = npc.Center + (direction * offsetDistance);
+
+                // Update rotation
+                Projectile.rotation = direction.ToRotation() + MathHelper.ToRadians(90f);
+
+                Projectile.gfxOffY = npc.gfxOffY;
             }
             else
             {
@@ -84,7 +97,10 @@ namespace MagicMod.content.projectiles
         {
             IsStickingToTarget = true;
             TargetWhoAmI = target.whoAmI;
-            Projectile.velocity = (target.Center - Projectile.Center) * 0.75f;
+
+            // Store the direction FROM projectile TO target (reversed from current)
+            Projectile.velocity = (Projectile.Center - target.Center).SafeNormalize(Vector2.Zero);
+
             Projectile.netUpdate = true;
             Projectile.damage = 0;
 
@@ -101,9 +117,9 @@ namespace MagicMod.content.projectiles
                     bookOfSwords.hits.Add(target);
                     bookOfSwords.hitNums.Add(1);
                     List<Projectile> tempList = new List<Projectile>
-                    {
-                        Projectile
-                    };
+            {
+                Projectile
+            };
                     bookOfSwords.projectilelist.Add(tempList);
                 }
             }
@@ -114,7 +130,7 @@ namespace MagicMod.content.projectiles
             // This helps the javelin stick in a visually appealing place within the target sprite.
             if (targetHitbox.Width > 8 && targetHitbox.Height > 8)
             {
-                targetHitbox.Inflate(-targetHitbox.Width / 8, -targetHitbox.Height / 8);
+                targetHitbox.Inflate(-targetHitbox.Width / 6, -targetHitbox.Height / 6);
             }
             // Return if the hitboxes intersects, which means the javelin collides or not
             return projHitbox.Intersects(targetHitbox);
