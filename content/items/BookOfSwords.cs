@@ -13,7 +13,7 @@ namespace MagicMod.content.items
         public List<NPC> hits = new List<NPC>();
         public List<int> hitNums = new List<int>();
         public List<List<Projectile>> projectilelist = new List<List<Projectile>>();
-        private const int damageMult = 24;
+        private const int damageMult = 18;
 
         public override void SetDefaults()
         {
@@ -39,15 +39,26 @@ namespace MagicMod.content.items
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe();
-            recipe.AddIngredient(ItemID.Book);
-            if (ModLoader.TryGetMod("AerialiteBar", out Mod calamityMod) && calamityMod.TryFind<ModItem>("AerialiteBar", out ModItem AerialiteBar))
+            recipe.AddIngredient(ItemID.Book, 1);
+
+            if (ModLoader.TryGetMod("CalamityMod", out Mod calamityMod) && calamityMod.TryFind<ModItem>("AerialiteBar", out ModItem AerialiteBar))
             {
-                recipe.AddIngredient(AerialiteBar);
+                recipe.AddIngredient(AerialiteBar, 12);
+                if (calamityMod.TryFind<ModItem>("WindBlade", out ModItem WindBlade))
+                {
+                    recipe.AddIngredient(WindBlade, 3);
+                }
+                else
+                {
+                    recipe.AddIngredient(ItemID.GiantHarpyFeather, 5);
+                }
             }
             else
             {
-                recipe.AddIngredient(ItemID.Feather, 300);
+                recipe.AddIngredient(ItemID.Feather, 600);
+                recipe.AddIngredient(ItemID.GiantHarpyFeather, 5);
             }
+
             recipe.AddTile(TileID.Anvils);
             recipe.Register();
         }
@@ -79,7 +90,11 @@ namespace MagicMod.content.items
                     double totalDam = 0;
 
                     double numOfHits = hitNums[i];
-                    if (numOfHits > 10)
+                    if (numOfHits > 100)
+                    {
+                        totalDam = numOfHits * damageMult * 1.3;
+                    }
+                    else if (numOfHits > 50)
                     {
                         totalDam = numOfHits * damageMult * 1.1;
                     }
