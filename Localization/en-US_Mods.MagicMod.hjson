@@ -5,7 +5,7 @@ Projectiles: {
 
 Items: {
 	BookOfSwords: {
-		Tooltip: "Stack sword projectiles to deal BIG damage"
+		Tooltip: Stack sword projectiles to deal BIG damage
 		DisplayName: Book Of Swords
 	}
 
@@ -21,42 +21,42 @@ Items: {
 
 	RangerBuffPotion: {
 		DisplayName: Ranger Potion
-		Tooltip: "Ranger class would like this"
+		Tooltip: Ranger class would like this
 	}
 
 	AnglerBuffPotion: {
 		DisplayName: Angler Potion
-		Tooltip: "FISH GALORE"
+		Tooltip: FISH GALORE
 	}
 
 	ArchitectBuffPotion: {
 		DisplayName: Architect Potion
-		Tooltip: "A Builder's dream"
+		Tooltip: A Builder's dream
 	}
 
 	ExplorerBuffPotion: {
 		DisplayName: Explorer Potion
-		Tooltip: "Stay safe explorer"
+		Tooltip: Stay safe explorer
 	}
 
 	FarmingBuffPotion: {
 		DisplayName: Farming Potion
-		Tooltip: ""
+		Tooltip: "To grind for that 0.05% drop chance"
 	}
 
 	MageBuffPotion: {
 		DisplayName: Mage Potion
-		Tooltip: "Harry Potter would be proud"
+		Tooltip: Harry Potter would be proud
 	}
 
 	MeleeBuffPotion: {
 		DisplayName: Fighter Potion
-		Tooltip: "HADOUKEN"
+		Tooltip: HADOUKEN
 	}
 
 	SummonerBuffPotion: {
 		DisplayName: Summoner Potion
-		Tooltip: "AFK to win"
+		Tooltip: AFK to win
 	}
 }
 
@@ -73,41 +73,41 @@ Buffs: {
 
 	RangerBuff: {
 		DisplayName: Ranger Buff
-		Description: "Pew pew pewwwwdiepie"
+		Description: Pew pew pewwwwdiepie
 	}
 
 	AnglerBuff: {
 		DisplayName: Angler Buff
-		Description: "Fishy fingers"
+		Description: Fishy fingers
 	}
 
 	ArchitectBuff: {
 		DisplayName: Architect Buff
-		Description: "Also try LEGO"
+		Description: Also try LEGO
 	}
 
 	ExplorerBuff: {
 		DisplayName: Explorer Buff
-		Description: "Steve Irwin?"
+		Description: Steve Irwin?
 	}
 
 	FarmingBuff: {
 		DisplayName: Farming Buff
-		Description: "MEATHEAD MONST"
+		Description: MEATHEAD MONST
 	}
 
 	MageBuff: {
 		DisplayName: Mage Buff
-		Description: "You're a wizard, Harry"
+		Description: You're a wizard, Harry
 	}
 
 	MeleeBuff: {
 		DisplayName: Melee Buff
-		Description: "I hereby swear allegian- SHUT UP ARTHUR"
+		Description: I hereby swear allegian- SHUT UP ARTHUR
 	}
 
 	SummonerBuff: {
 		DisplayName: Summoner Buff
-		Description: "Treat your summons with care"
+		Description: Treat your summons with care
 	}
 }
