@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace MagicMod.content.buffs
 {
-    public class MeleeBuff : ModBuff
+    public class MageBuff : ModBuff
     {
         public override void Update(Player player, ref int buffIndex)
         {
@@ -46,8 +46,11 @@ namespace MagicMod.content.buffs
             // Wrath Buff (ID = 117)
             player.GetDamage(DamageClass.Generic) += 0.1f;
 
-            // Titan Buff (ID = 108)
-            player.kbBuff = true;
+            // Magic Power Buff (ID = 7)
+            player.GetDamage(DamageClass.Magic) += 0.2f;
+
+            // Mana Regeneration Buff (ID = 6)
+            player.manaRegenBuff = true;
         }
     }
 }

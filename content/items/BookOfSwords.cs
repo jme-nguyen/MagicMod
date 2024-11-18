@@ -7,7 +7,7 @@ using MagicMod.content.buffs;
 
 namespace MagicMod.content.items
 {
-    internal class BookOfSwords : ModItem
+    public class BookOfSwords : ModItem
     {
         public List<NPC> hits = new List<NPC>();
         public List<int> hitNums = new List<int>();

@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace MagicMod.content.buffs
 {
-    public class MeleeBuff : ModBuff
+    public class SummonerBuff : ModBuff
     {
         public override void Update(Player player, ref int buffIndex)
         {
@@ -46,8 +46,8 @@ namespace MagicMod.content.buffs
             // Wrath Buff (ID = 117)
             player.GetDamage(DamageClass.Generic) += 0.1f;
 
-            // Titan Buff (ID = 108)
-            player.kbBuff = true;
+            // Summoning Buff (ID = 110)
+            player.maxMinions++;
         }
     }
 }

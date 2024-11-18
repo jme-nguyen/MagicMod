@@ -4,7 +4,7 @@ using MagicMod.content.globalNPCs;
 
 namespace MagicMod.content.buffs
 {
-    internal class BookOfSwordsDebuff : ModBuff
+    public class BookOfSwordsDebuff : ModBuff
     {
         public Player playerCalled;
 
