@@ -1,9 +1,62 @@
-Projectiles.BookOfSwordProjectile.DisplayName: Book Of Sword Projectile
+Projectiles: {
+	BookOfSwordProjectile.DisplayName: Book Of Sword Projectile
+	ExampleJavelinProjectile.DisplayName: Example Javelin Projectile
+}
 
 Items: {
 	BookOfSwords: {
-		Tooltip: ""
+		Tooltip: "Stack sword projectiles to deal BIG damage"
 		DisplayName: Book Of Swords
+	}
+
+	ExampleBuffPotion: {
+		DisplayName: Example Buff Potion
+		Tooltip: ""
+	}
+
+	ExampleJavelin: {
+		DisplayName: Example Javelin
+		Tooltip: ""
+	}
+
+	RangerBuffPotion: {
+		DisplayName: Ranger Potion
+		Tooltip: "Ranger class would like this"
+	}
+
+	AnglerBuffPotion: {
+		DisplayName: Angler Potion
+		Tooltip: "FISH GALORE"
+	}
+
+	ArchitectBuffPotion: {
+		DisplayName: Architect Potion
+		Tooltip: "A Builder's dream"
+	}
+
+	ExplorerBuffPotion: {
+		DisplayName: Explorer Potion
+		Tooltip: "Stay safe explorer"
+	}
+
+	FarmingBuffPotion: {
+		DisplayName: Farming Potion
+		Tooltip: ""
+	}
+
+	MageBuffPotion: {
+		DisplayName: Mage Potion
+		Tooltip: "Harry Potter would be proud"
+	}
+
+	MeleeBuffPotion: {
+		DisplayName: Fighter Potion
+		Tooltip: "HADOUKEN"
+	}
+
+	SummonerBuffPotion: {
+		DisplayName: Summoner Potion
+		Tooltip: "AFK to win"
 	}
 }
 
@@ -11,5 +64,50 @@ Buffs: {
 	BookOfSwordsDebuff: {
 		Description: Mods.MagicMod.Buffs.BookOfSwordsDebuff.Description
 		DisplayName: Book Of Swords Debuff
+	}
+
+	ExampleDefenseBuff: {
+		DisplayName: Example Defense Buff
+		Description: Mods.MagicMod.Buffs.ExampleDefenseBuff.Description
+	}
+
+	RangerBuff: {
+		DisplayName: Ranger Buff
+		Description: "Pew pew pewwwwdiepie"
+	}
+
+	AnglerBuff: {
+		DisplayName: Angler Buff
+		Description: "Fishy fingers"
+	}
+
+	ArchitectBuff: {
+		DisplayName: Architect Buff
+		Description: "Also try LEGO"
+	}
+
+	ExplorerBuff: {
+		DisplayName: Explorer Buff
+		Description: "Steve Irwin?"
+	}
+
+	FarmingBuff: {
+		DisplayName: Farming Buff
+		Description: "MEATHEAD MONST"
+	}
+
+	MageBuff: {
+		DisplayName: Mage Buff
+		Description: "You're a wizard, Harry"
+	}
+
+	MeleeBuff: {
+		DisplayName: Melee Buff
+		Description: "I hereby swear allegian- SHUT UP ARTHUR"
+	}
+
+	SummonerBuff: {
+		DisplayName: Summoner Buff
+		Description: "Treat your summons with care"
 	}
 }
