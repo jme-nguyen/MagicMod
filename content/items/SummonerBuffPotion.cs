@@ -34,6 +34,24 @@ namespace MagicMod.content.items
         }
         public override void AddRecipes()
         {
+            RecipeGroup ExquisitelyStuffedGroup = new RecipeGroup(
+                () => $"Any Exquisitely Stuffed Food",
+                ItemID.GoldenDelight,
+                ItemID.Bacon,
+                ItemID.BBQRibs,
+                ItemID.Burger,
+                ItemID.Milkshake,
+                ItemID.Pizza,
+                ItemID.Spaghetti,
+                ItemID.Steak,
+                ItemID.ChristmasPudding,
+                ItemID.GingerbreadCookie,
+                ItemID.SugarCookie,
+                ItemID.ApplePie,
+                ItemID.GrapeJuice);
+
+            RecipeGroup.RegisterGroup("ExquisitelyStuffedFoods", ExquisitelyStuffedGroup);
+
             Recipe recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.EndurancePotion, 1);
             recipe.AddIngredient(ItemID.IronskinPotion, 1);

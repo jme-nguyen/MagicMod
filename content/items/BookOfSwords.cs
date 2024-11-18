@@ -1,6 +1,7 @@
 ﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Terraria.Localization;
 using MagicMod.content.projectiles;
 using System.Collections.Generic;
 using MagicMod.content.buffs;
