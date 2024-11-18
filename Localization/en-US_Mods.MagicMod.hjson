@@ -41,7 +41,7 @@ Items: {
 
 	FarmingBuffPotion: {
 		DisplayName: Farming Potion
-		Tooltip: "To grind for that 0.05% drop chance"
+		Tooltip: To grind for that 0.05% drop chance
 	}
 
 	MageBuffPotion: {
