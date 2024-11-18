@@ -5,6 +5,7 @@ using Terraria.Localization;
 using MagicMod.content.projectiles;
 using System.Collections.Generic;
 using MagicMod.content.buffs;
+using System;
 
 namespace MagicMod.content.items
 {
@@ -90,18 +91,19 @@ namespace MagicMod.content.items
                     double totalDam = 0;
 
                     double numOfHits = hitNums[i];
-                    if (numOfHits > 100)
-                    {
-                        totalDam = numOfHits * damageMult * 1.3;
-                    }
-                    else if (numOfHits > 50)
-                    {
-                        totalDam = numOfHits * damageMult * 1.1;
-                    }
-                    else
-                    {
-                        totalDam = numOfHits * damageMult;
-                    }
+                    //if (numOfHits > 100)
+                    //{
+                    //    totalDam = numOfHits * damageMult * 1.3;
+                    //}
+                    //else if (numOfHits > 50)
+                    //{
+                    //    totalDam = numOfHits * damageMult * 1.1;
+                    //}
+                    //else
+                    //{
+                    //    totalDam = numOfHits * damageMult;
+                    //}
+                    totalDam = numOfHits * damageMult * Math.Pow(1.0015, numOfHits);
 
 
                     NPC enemy = hits[i];
@@ -119,7 +121,8 @@ namespace MagicMod.content.items
                         HitDirection = hitDirection,
                     });
                 }
-
+                hits.Clear();
+                hitNums.Clear();
             }
             else
             {
