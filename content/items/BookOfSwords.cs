@@ -35,6 +35,22 @@ namespace MagicMod.content.items
             Item.shootSpeed = 20f;
         }
 
+        public override void AddRecipes()
+        {
+            Recipe recipe = CreateRecipe();
+            recipe.AddIngredient(ItemID.Book);
+            if (ModLoader.TryGetMod("AerialiteBar", out Mod calamityMod) && calamityMod.TryFind<ModItem>("AerialiteBar", out ModItem AerialiteBar))
+            {
+                recipe.AddIngredient(AerialiteBar);
+            }
+            else
+            {
+                recipe.AddIngredient(ItemID.Feather, 300);
+            }
+            recipe.AddTile(TileID.Anvils);
+            recipe.Register();
+        }
+
         public override bool AltFunctionUse(Player player)
         {
             return true;
