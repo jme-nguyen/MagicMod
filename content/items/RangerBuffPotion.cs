@@ -33,5 +33,41 @@ namespace MagicMod.content.items
             Item.buffType = ModContent.BuffType<buffs.RangerBuff>(); // Specify an existing buff to be applied when used.
             Item.buffTime = 36000; // The amount of time the buff declared in Item.buffType will last in ticks. 5400 / 60 is 90, so this buff will last 90 seconds.
         }
+        public override void AddRecipes()
+        {
+            RecipeGroup ExquisitelyStuffedGroup = new RecipeGroup(
+                () => $"Any Exquisitely Stuffed Food",
+                ItemID.GoldenDelight,
+                ItemID.Bacon,
+                ItemID.BBQRibs,
+                ItemID.Burger,
+                ItemID.Milkshake,
+                ItemID.Pizza,
+                ItemID.Spaghetti,
+                ItemID.Steak,
+                ItemID.ChristmasPudding,
+                ItemID.GingerbreadCookie,
+                ItemID.SugarCookie,
+                ItemID.ApplePie,
+                ItemID.GrapeJuice);
+
+            RecipeGroup.RegisterGroup("ExquisitelyStuffedFoods", ExquisitelyStuffedGroup);
+
+            Recipe recipe = CreateRecipe();
+            recipe.AddIngredient(ItemID.AmmoReservationPotion, 1);
+            recipe.AddIngredient(ItemID.ArcheryPotion, 1);
+            recipe.AddIngredient(ItemID.EndurancePotion, 1);
+            recipe.AddIngredient(ItemID.IronskinPotion, 1);
+            recipe.AddIngredient(ItemID.LifeforcePotion, 1);
+            recipe.AddIngredient(ItemID.RagePotion, 1);
+            recipe.AddIngredient(ItemID.RegenerationPotion, 1);
+            recipe.AddIngredient(ItemID.SwiftnessPotion, 1);
+            recipe.AddIngredient(ItemID.ThornsPotion, 1);
+            recipe.AddIngredient(ItemID.WrathPotion, 1);
+            recipe.AddRecipeGroup("ExquisitelyStuffedFoods", 1);
+            recipe.AddTile(TileID.Bottles);
+
+            recipe.Register();
+        }
     }
 }

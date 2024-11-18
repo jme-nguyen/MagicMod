@@ -32,5 +32,17 @@ namespace MagicMod.content.items
             Item.buffType = ModContent.BuffType<buffs.ArchitectBuff>(); // Specify an existing buff to be applied when used.
             Item.buffTime = 72000; // The amount of time the buff declared in Item.buffType will last in ticks. 5400 / 60 is 90, so this buff will last 90 seconds.
         }
+        public override void AddRecipes()
+        {
+            Recipe recipe = CreateRecipe();
+            recipe.AddIngredient(ItemID.BuilderPotion, 1);
+            recipe.AddIngredient(ItemID.BiomeSightPotion, 1);
+            recipe.AddIngredient(ItemID.CalmingPotion, 1);
+            recipe.AddIngredient(ItemID.MiningPotion, 1);
+            recipe.AddIngredient(ItemID.ShinePotion, 1);
+            recipe.AddTile(TileID.Bottles);
+
+            recipe.Register();
+        }
     }
 }

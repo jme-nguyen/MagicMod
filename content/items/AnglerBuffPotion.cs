@@ -32,5 +32,16 @@ namespace MagicMod.content.items
             Item.buffType = ModContent.BuffType<buffs.AnglerBuff>(); // Specify an existing buff to be applied when used.
             Item.buffTime = 72000; // The amount of time the buff declared in Item.buffType will last in ticks. 5400 / 60 is 90, so this buff will last 90 seconds.
         }
+        public override void AddRecipes()
+        {
+            Recipe recipe = CreateRecipe();
+            recipe.AddIngredient(ItemID.CratePotion, 1);
+            recipe.AddIngredient(ItemID.FishingPotion, 1);
+            recipe.AddIngredient(ItemID.SonarPotion, 1);
+            recipe.AddIngredient(ItemID.CalmingPotion, 1);
+            recipe.AddTile(TileID.Bottles);
+
+            recipe.Register();
+        }
     }
 }
