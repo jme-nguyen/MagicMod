@@ -34,13 +34,13 @@ namespace MagicMod.content.items
         }
         public override void AddRecipes()
         {
-            Recipe recipe = CreateRecipe();
+            Recipe recipe = CreateRecipe(3);
             recipe.AddIngredient(ItemID.BattlePotion, 1);
             recipe.AddIngredient(ItemID.HunterPotion, 1);
             recipe.AddIngredient(ItemID.EndurancePotion, 1);
             recipe.AddIngredient(ItemID.IronskinPotion, 1);
             recipe.AddIngredient(ItemID.RagePotion, 1);
-            recipe.AddIngredient(ItemID.WrathPotion, 1);
+            //recipe.AddIngredient(ItemID.WrathPotion, 1);
             recipe.AddTile(TileID.Bottles);
 
             recipe.Register();

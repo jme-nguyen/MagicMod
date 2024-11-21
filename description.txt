@@ -1,1 +1,5 @@
-MagicMod is a pretty cool mod, it does...this. Modify this file with a description of your mod.
+MagicMod is a pretty cool mod.
+
+New:
+- Book of Swords: Magical book that conjures spectral swords which stick to enemies and does no damage until right clicking. The more swords that stick to the target the more damage it does
+- Various potions that help your specific needs (mage, melee, fishing, exploring, etc.)

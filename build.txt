@@ -1,3 +1,3 @@
 displayName = MagicMod
 author = jme
-version = 0.1
+version = 1.1

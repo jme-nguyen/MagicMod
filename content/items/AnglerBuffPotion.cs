@@ -34,7 +34,7 @@ namespace MagicMod.content.items
         }
         public override void AddRecipes()
         {
-            Recipe recipe = CreateRecipe();
+            Recipe recipe = CreateRecipe(3);
             recipe.AddIngredient(ItemID.CratePotion, 1);
             recipe.AddIngredient(ItemID.FishingPotion, 1);
             recipe.AddIngredient(ItemID.SonarPotion, 1);

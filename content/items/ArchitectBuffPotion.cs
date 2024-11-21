@@ -34,9 +34,9 @@ namespace MagicMod.content.items
         }
         public override void AddRecipes()
         {
-            Recipe recipe = CreateRecipe();
+            Recipe recipe = CreateRecipe(3);
             recipe.AddIngredient(ItemID.BuilderPotion, 1);
-            recipe.AddIngredient(ItemID.BiomeSightPotion, 1);
+            //recipe.AddIngredient(ItemID.BiomeSightPotion, 1);
             recipe.AddIngredient(ItemID.CalmingPotion, 1);
             recipe.AddIngredient(ItemID.MiningPotion, 1);
             recipe.AddIngredient(ItemID.ShinePotion, 1);

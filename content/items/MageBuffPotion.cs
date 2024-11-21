@@ -52,7 +52,7 @@ namespace MagicMod.content.items
 
             RecipeGroup.RegisterGroup("ExquisitelyStuffedFoods", ExquisitelyStuffedGroup);
 
-            Recipe recipe = CreateRecipe();
+            Recipe recipe = CreateRecipe(3);
             recipe.AddIngredient(ItemID.EndurancePotion, 1);
             recipe.AddIngredient(ItemID.IronskinPotion, 1);
             recipe.AddIngredient(ItemID.LifeforcePotion, 1);
@@ -62,7 +62,7 @@ namespace MagicMod.content.items
             recipe.AddIngredient(ItemID.RegenerationPotion, 1);
             recipe.AddIngredient(ItemID.SwiftnessPotion, 1);
             recipe.AddIngredient(ItemID.ThornsPotion, 1);
-            recipe.AddIngredient(ItemID.WrathPotion, 1);
+            //recipe.AddIngredient(ItemID.WrathPotion, 1);
             recipe.AddRecipeGroup("ExquisitelyStuffedFoods", 1);
             recipe.AddTile(TileID.Bottles);
 
