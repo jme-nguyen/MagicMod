@@ -25,8 +25,12 @@ Items: {
 	}
 
 	AnglerBuffPotion: {
-		DisplayName: Angler Potion
-		Tooltip: FISH GALORE
+		DisplayName: Fishy Potion
+		Tooltip:
+			'''
+			Combines the effects of Crate Potion, Fishing Potion, Sonar Potion and Water Walking Potion.
+			Increased fishing power, chance to get a crate and detects hooked fish.
+			'''
 	}
 
 	ArchitectBuffPotion: {
@@ -58,6 +62,11 @@ Items: {
 		DisplayName: Summoner Potion
 		Tooltip: AFK to win
 	}
+
+	BattleBuffPotion: {
+		DisplayName: Battle Buff Potion
+		Tooltip: ""
+	}
 }
 
 Buffs: {
@@ -77,8 +86,8 @@ Buffs: {
 	}
 
 	AnglerBuff: {
-		DisplayName: Angler Buff
-		Description: Fishy fingers
+		DisplayName: Fishy
+		Description: Increased fishing aptitude
 	}
 
 	ArchitectBuff: {
@@ -109,5 +118,10 @@ Buffs: {
 	SummonerBuff: {
 		DisplayName: Summoner Buff
 		Description: Treat your summons with care
+	}
+
+	BattleBuff: {
+		DisplayName: Battle Buff
+		Description: Mods.MagicMod.Buffs.BattleBuff.Description
 	}
 }

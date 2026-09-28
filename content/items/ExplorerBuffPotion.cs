@@ -31,20 +31,19 @@ namespace MagicMod.content.items
             Item.rare = ItemRarityID.Orange;
             Item.value = Item.buyPrice(gold: 1);
             Item.buffType = ModContent.BuffType<buffs.ExplorerBuff>(); // Specify an existing buff to be applied when used.
-            Item.buffTime = 72000; // The amount of time the buff declared in Item.buffType will last in ticks. 5400 / 60 is 90, so this buff will last 90 seconds.
+            Item.buffTime = 54000; // 15 mins. The amount of time the buff declared in Item.buffType will last in ticks. 5400 / 60 is 90, so this buff will last 90 seconds.
         }
         public override void AddRecipes()
         {
-            Recipe recipe = CreateRecipe(3);
-            recipe.AddIngredient(ItemID.FeatherfallPotion, 1);
-            recipe.AddIngredient(ItemID.FlipperPotion, 1);
-            recipe.AddIngredient(ItemID.GillsPotion, 1);
-            recipe.AddIngredient(ItemID.MiningPotion, 1);
-            recipe.AddIngredient(ItemID.NightOwlPotion, 1);
-            recipe.AddIngredient(ItemID.NightOwlPotion, 1);
-            recipe.AddIngredient(ItemID.ShinePotion, 1);
-            recipe.AddIngredient(ItemID.SpelunkerPotion, 1);
+            Recipe recipe = CreateRecipe(8);
+
+            recipe.AddIngredient(ItemID.BottledWater, 1);
+            recipe.AddIngredient(ItemID.Torch, 1);
+            recipe.AddIngredient(ItemID.Glowstick, 1);
+            recipe.AddIngredient(ItemID.GoldCoin, 1);
+
             recipe.AddTile(TileID.Bottles);
+            recipe.AddTile(TileID.AlchemyTable);
 
             recipe.Register();
         }

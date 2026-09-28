@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace MagicMod.content.buffs
 {
-    public class ArchitectBuff : ModBuff
+    public class ArchitectBuff : ModBuff //renamed to Master builder potion
     {
         public override void Update(Player player, ref int buffIndex)
         {
@@ -12,9 +12,6 @@ namespace MagicMod.content.buffs
             player.tileSpeed += 0.25f;
             player.wallSpeed += 0.25f;
             player.blockRange++;
-
-            // Biome Sight Buff (ID = 343)
-            player.biomeSight = true;
 
             // Calming Buff (ID = 106)
             player.calmed = true;
@@ -24,6 +21,9 @@ namespace MagicMod.content.buffs
 
             // Shine Buff (ID = 11)
             Lighting.AddLight((int)(player.position.X + (float)(player.width / 2)) / 16, (int)(player.position.Y + (float)(player.height / 2)) / 16, 0.8f, 0.95f, 1f);
+
+            //Swiftness Buff (ID = 3)
+            player.moveSpeed += 0.25f;
         }
     }
 }
