@@ -11,9 +11,6 @@ namespace MagicMod.content.buffs
             // Dangersense Buff (ID = 111)
             player.dangerSense = true;
 
-            // Featherfall Buff (ID = 8)
-            player.slowFall = true;
-
             // Flipper Buff (ID = 109)
             player.ignoreWater = true;
             player.accFlipper = true;

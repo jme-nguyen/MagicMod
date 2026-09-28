@@ -8,6 +8,8 @@ namespace MagicMod.content.buffs
     {
         public override void Update(Player player, ref int buffIndex)
         {
+            //ign Fishy Potion, combines effects of crate, fishing, sonar, waterwalking
+
             // Crate Buff (ID = 123)
             player.cratePotion = true;
 
@@ -17,8 +19,8 @@ namespace MagicMod.content.buffs
             // Sonar Buff (ID = 122)
             player.sonarPotion = true;
 
-            //Calming Buff (ID = 106)
-            player.calmed = true;
+            //WaterWalking Buff (ID = 15)
+            player.waterWalk = true;
         }
     }
 }
