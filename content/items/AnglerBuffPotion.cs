@@ -27,21 +27,38 @@ namespace MagicMod.content.items
             Item.UseSound = SoundID.Item3;
             Item.maxStack = Item.CommonMaxStack;
             Item.consumable = true;
-            Item.rare = ItemRarityID.Orange;
-            Item.value = Item.buyPrice(gold: 1);
+            Item.rare = ItemRarityID.Blue;
+            Item.value = Item.buyPrice(gold: 2);
             Item.buffType = ModContent.BuffType<buffs.AnglerBuff>(); // Specify an existing buff to be applied when used.
-            Item.buffTime = 72000; // The amount of time the buff declared in Item.buffType will last in ticks. 5400 / 60 is 90, so this buff will last 90 seconds.
+            Item.buffTime = 8 * 60 * 60; // The amount of time the buff declared in Item.buffType will last in ticks. 5400 / 60 is 90, so this buff will last 90 seconds.
         }
         public override void AddRecipes()
         {
-            Recipe recipe = CreateRecipe(3);
-            recipe.AddIngredient(ItemID.CratePotion, 1);
-            recipe.AddIngredient(ItemID.FishingPotion, 1);
-            recipe.AddIngredient(ItemID.SonarPotion, 1);
-            recipe.AddIngredient(ItemID.CalmingPotion, 1);
-            recipe.AddTile(TileID.Bottles);
+            //Potion can be crafted at bottle or alchemy table with three recipes below, buff time is 8 minutes
+            Recipe recipe1 = CreateRecipe(1);
+            recipe1.AddIngredient(ItemID.CratePotion, 1);
+            recipe1.AddIngredient(ItemID.GoldCoin, 1);
 
-            recipe.Register();
+            Recipe recipe2 = CreateRecipe(1);
+            recipe2.AddIngredient(ItemID.FishingPotion, 1);
+            recipe1.AddIngredient(ItemID.GoldCoin, 1);
+
+            Recipe recipe3 = CreateRecipe(1);
+            recipe3.AddIngredient(ItemID.SonarPotion, 1);
+            recipe1.AddIngredient(ItemID.GoldCoin, 1);
+
+            recipe1.AddTile(TileID.Bottles);
+            recipe1.AddTile(TileID.AlchemyTable);
+
+            recipe2.AddTile(TileID.Bottles);
+            recipe2.AddTile(TileID.AlchemyTable);
+
+            recipe3.AddTile(TileID.Bottles);
+            recipe3.AddTile(TileID.AlchemyTable);
+
+            recipe1.Register();
+            recipe2.Register();
+            recipe3.Register();
         }
     }
 }
